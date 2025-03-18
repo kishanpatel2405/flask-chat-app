@@ -6,6 +6,7 @@ from models.user import User
 
 auth_bp = Blueprint("auth", __name__)
 
+
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -20,6 +21,7 @@ def login():
             flash("Invalid email or password", "danger")
 
     return render_template("login.html")
+
 
 @auth_bp.route("/logout")
 @login_required

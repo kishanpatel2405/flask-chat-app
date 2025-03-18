@@ -1,7 +1,9 @@
-from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
+from flask_sqlalchemy import SQLAlchemy
+
 db = SQLAlchemy()
+
 
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -1,5 +1,7 @@
-from models import db
 from datetime import datetime
+
+from models import db
+
 
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)

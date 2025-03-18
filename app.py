@@ -27,14 +27,14 @@ login_manager.init_app(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = "auth.login"  # Redirect to login page if not logged in
+login_manager.login_view = "auth.login"
 app.register_blueprint(auth_bp, url_prefix="/auth")
 app.register_blueprint(chat_api)
 
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))  # Load user by ID
+    return User.query.get(int(user_id))
 
 
 @app.route("/")
